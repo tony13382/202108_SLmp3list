@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型首頁</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../set.css">
+</head>
+<body>
+    <div id="phoneArea" style="width: 411px;">
+        <div  style="position: absolute; width: 411px;">
+            <a onclick="changeImg()">
+                <img src="./01.png" id="changeImg" class="fullImg">
+            </a>
+        </div>
+        <div id="checkSongBox" style="position: relative; top: 617px; left: 33px; width: 352px; display: none; align-items: center; height: 100px;">
+            <div style="display: flex; width: 30%; justify-content: center;">
+                <a onclick="redo()">
+                    <img src="./btnRedo.png" class="fullImg">
+                </a>
+            </div>
+            <div style="display: flex; width: 40%; justify-content: center;">
+                <a href="./02.html">
+                    <img src="./btnCheck.png" class="fullImg">
+                </a>
+            </div>
+            <div style="display: flex; width: 30%; justify-content: center;">
+                <a onclick="playSoundOnlyPerson()">
+                    <img src="./btnPlay.png" class="fullImg">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var timer = 0
+        function redo() {
+            timer = -1;
+            changeImg();
+        }
+        function playSoundOnlyPerson(){
+            var music = new Audio('../../../onlyPerson.m4a');
+            music.play();
+        }
+        function changeImg() {
+            let img=document.getElementById("changeImg");
+            if(timer==-1){
+                img.src="./01.png";
+                document.getElementById("checkSongBox").style.display="none";
+            }
+            if(timer==0){img.src="./02.png";}
+            if(timer==1){ 
+                img.src="./03.png"; 
+                document.getElementById("checkSongBox").style.display="flex";
+            }
+                
+            timer++;
+        }
+    </script>
+
+</body>
+</html>

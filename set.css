@@ -1,0 +1,19 @@
+body{
+    padding: 0px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+#phoneArea{
+    width: 411px;
+    height: 823px;
+    display: flex;
+    background-color: #F4FDFC;
+    border: 1px black;
+}
+.fullImg{
+    width: 100%;
+}
+    
